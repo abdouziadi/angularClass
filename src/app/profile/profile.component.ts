@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-profile',
@@ -8,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class ProfileComponent {
 
+  @Output () msgEvent=new EventEmitter<string>();
+
+    sendMessage(){
+        this.msgEvent.emit("hello from child");
+      }
+
+
+
+    @Input('msg')message:string='';
 }
