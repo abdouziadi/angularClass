@@ -1,40 +1,19 @@
-<table border="1">
-    <tr>
-      <td colspan="2">
-        <app-header></app-header>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="2">
-        <app-profile [msg]="msg" (msgEvent)="receiveMessage($event)"></app-profile>
-      </td>
-    </tr>
-    <tr>
-      <td>Message:</td>
-      <td>
-        <input type="text" name="message" [(ngModel)]="message">
-      </td>
-    </tr>
-    <tr>
-      <td>Image:</td>
-      <td>
-        <img [src]="image">
-      </td>
-    </tr>
-    <tr>
-      <td colspan="2">
-        <button (click)="sendmessage()">ENVOYER</button>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="2">
-        <h1>Message from l'enfant: {{msgEnfant}}</h1>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="2">
-        <router-outlet></router-outlet>
-      </td>
-    </tr>
-  </table>
-  
+<app-header></app-header>
+
+<app-profile [msg]="msg" (msgEvent)="receiveMessage($event)"></app-profile>
+
+<div>
+  <label>Message:</label>
+  <input type="text" name="message" [(ngModel)]="message">
+</div>
+
+<div>
+  <label>Image:</label>
+  <img [src]="image">
+</div>
+
+<button (click)="sendmessage()">ENVOYER</button>
+
+<h1>Message from l'enfant: {{msgEnfant}}</h1>
+
+<router-outlet></router-outlet>
